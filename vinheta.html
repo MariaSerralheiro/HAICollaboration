@@ -8,63 +8,81 @@
     <link rel="stylesheet" href="stylesheet.css">
     <!-- BOOTSTRAP LINK -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <!-- Logo -->
-    <nav class="navBar"> 
-        <ul>
-            <li><img src="logo.png" class="logo" alt="Logo"></li>
-        </ul>
-    </nav>
+     <div class="container mt-4">
+            <div class="row">
+                 <div class="col-lg-2 mt-2"><img src="img/logo_H1.png" class="logo"></div>
+                <div class="col-lg-2"><img src="img/logoInesc.png" class="logo"></div>
+                <div class="col-lg-2 mt-3"><img src="img/logoIst.png" class="logo"></div>
+            </div>
+    </div>
 
-    <div class="container section" id="section3" style="margin-top: 10%;">
+    <div class="container section" id="section3" style="margin-top: 5%;">
         <div class="container">
             <div class="row mt-5">
                 <div class="col-lg-12">
-                    <h1 style="text-align: center;" class="stepTitle">STEP 2</h1>
+                    <h1 style="text-align: center;" class="stepTitle nunito">STEP 2</h1>
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-lg-12">
-                    <p style="text-align: center;">In this step, you will be randomly assigned a <span>vignette</span>, which is a hypothetical scenario.</p>
-                    <p style="text-align: center;">Please <span>vividly imagine</span> yourself in the following situation:</p>
-                    <br>
-                    <div><hr></div>
+            <div class="row mt-2">
+                <div class="col-lg-2">
+                    <img src="img/Arrows.png">
                 </div>
+                <div class="col-lg-8">
+                    <p style="text-align: center; margin-top: 5%;">In this step, you will <span>play a game</span> with the help of your <span>AI team member</span></p>
+                    <p style="text-align: center;">to capture demons that were accidentaly summoned by a wizard.</p>
+                     
+        
+                    <br>
+                </div>
+                <div class="col-lg-2">
+                    <img src="img/Arrows.png">
+                </div>
+                 <div><hr></div>
             </div>
             <div class="row mt-4">
                 <div class="col-lg-12">
-                    <p style="text-align: center;">You work for a <span>Travel Agency</span> in a <span>team</span> composed of <span>you</span> and an <span>Artificial Intelligence (AI)</span>.</p>
-                    <p style="text-align: center;">You will work <span>together</span> to develop a <span>vacation plan</span> for a client that was assigned to your team.</p>
-                    <br>
-                    <p style="text-align: center;">Now, please watch the video <span>below</span> for an in-depth exploration of this scenario.</p>
-                    <br>
-                    <p style="text-align: center;">After watching the video, click the button at the bottom of the page to proceed to the next step.</p>
+                    <p style="text-align: center;">You will have a tutorial in the game to help you understand the game.</p>
+                    <p style="text-align: center;">Please, do not skip the tutorial.</p>
+                    <p style="text-align: center; font-size: 30px;"><span>Have fun!</span></p>
                 </div>
             </div>
-            <div><hr></div>
+            <div style="margin-top: 3%; margin-bottom: 5%;"><hr></div>
             
-            <div class="col-lg-12">
-                <div id="vignetteVideoA" class="vignette-content">
-                    <!-- Video vignette content goes here -->
-                    <video width="1000px" controls style="display: block; margin: 0 auto;">
-                        <source src="Vignettes_V8_C.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            <!-- Video vignette content goes here -->
+            <div class="col-lg-12 d-flex justify-content-center">
+                <div style="
+                    width: 960px;
+                    height: 540px;
+                    overflow: hidden;
+                    position: relative;
+                ">
+                    <iframe src="WGL5/index.html"
+                            width="1920"
+                            height="1080"
+                            style="
+                                border:none;
+                                transform: scale(0.5);
+                                transform-origin: top left;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                            ">
+                    </iframe>
                 </div>
             </div>
-        </div>
+        
+        <div style="margin-top: 3%; margin-bottom: 5%;"><hr></div>
         <div class="row mt-5">
-            <div class="col-lg-12">
-                <p style="text-align: center; font-weight: bold; font-size: 30px; color: #051E3C;">Be careful!</p>
-                <p style="text-align: center;">After clicking the <span>Continue</span> button, you will not be able to return to this page.</p>
-            </div>
-            <div><hr></div>
-        </div>
-        <div class="row mt-4">
-            <a href="finalSurvey.html" style="text-decoration: none;">
-                <button class="buttonStep1">Continue</button>
+            <a href="finalSurvey.html" target="_blank" style="text-decoration: none;">
+                <button class="buttonStep1">Final Survey</button>
             </a>
         </div>
     </div>
@@ -74,7 +92,19 @@
     <div class="container">
         <div class="row mt-5"></div>
     </div>
+    <script>
+    document.getElementById("playButton").addEventListener("click", function () {
+        document.getElementById("gameContainer").style.display = "block";
+        this.style.display = "none";
 
-    <!-- Script removed as it's no longer needed -->
+        // Resume Unity
+        if (typeof unityInstance !== "undefined") {
+            unityInstance.SendMessage(
+                "GameManager",   // GameObject name
+                "StartGame"      // Method name
+            );
+        }
+    });
+    </script>
 </body>
 </html>
