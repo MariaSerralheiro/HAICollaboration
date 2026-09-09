@@ -37,7 +37,7 @@
                     <img src="Arrows.png">
                 </div>
                 <div class="col-lg-8">
-                    <p style="text-align: center; margin-top: 2%;">In this final step, please respond to the following questions concerning your satisfaction with your collaboration with the AI presented in the vignette.</p>
+                    <p style="text-align: center; margin-top: 2%;">In this final step, please respond to the following questions concerning your satisfaction with your collaboration with the AI during the game.</p>
                 </div>
                  <div class="col-lg-2">
                     <img src="Arrows.png">
@@ -45,13 +45,26 @@
                 <div><hr></div>
             </div>
 
-            <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdOmnZp5veTv-O_VRRe0suHwHMSwo1Tr3oFiAahKK_mTh4Zbw/viewform?embedded=true" width="100%" height="1893" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-            
-            <!-- <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdsfZIHe0zs33JSDrVRjLAYWG7ofS5GXcu3ePlYrjj9rDOeOw/viewform?embedded=true" width="100%" height="1893" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-          -->
-        </div>
+            <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSfLO7eMnnmntWy05Zz3z0UkYHcnJQDGVhbJ09VlqCtfG1GIMg/viewform?embedded=true" width="100%" height="1900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+             </div>
     </div>
 
+    <script>
     
+        var load = 0;
+        var iframe = document.getElementById('gform');
+
+        iframe.onload = function () {
+            load++;
+
+            // Always scroll to the top of the iframe when it reloads
+            iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            /* // Redirect after final submission
+            if (load > 3) {
+                document.location.href = "vinheta.html";
+            } */
+        };
+    </script>
 </body>
 </html>
